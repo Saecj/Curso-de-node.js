@@ -558,6 +558,287 @@ Implementar autenticación moderna.
 
 ---
 
+
+# 🌐 Códigos de Estado HTTP (HTTP Status Codes)
+
+## 📌 ¿Qué son los códigos HTTP?
+
+Los códigos HTTP son respuestas que el servidor devuelve al frontend para indicar:
+
+* Si la petición fue correcta
+* Si hubo un error
+* Qué tipo de error ocurrió
+* Cómo debe reaccionar el frontend
+
+Ejemplo del flujo:
+
+```txt
+Frontend → petición HTTP → Backend → respuesta + status HTTP
+```
+
+---
+
+# 🟢 200 — OK
+
+## ✅ Significado
+
+La petición se ejecutó correctamente.
+
+## 📌 Cuándo se utiliza
+
+* Obtener datos correctamente
+* Actualizar datos correctamente
+* Eliminar datos correctamente
+* Respuestas exitosas en general
+
+## 🧪 Ejemplo
+
+```js
+res.status(200).json({
+   mensaje: "Usuarios obtenidos correctamente"
+});
+```
+
+---
+
+# 🟢 201 — Created
+
+## ✅ Significado
+
+El recurso fue creado correctamente.
+
+## 📌 Cuándo se utiliza
+
+* Crear usuarios
+* Registrar productos
+* Insertar datos nuevos
+
+## 🧪 Ejemplo
+
+```js
+res.status(201).json(usuarioCreado);
+```
+
+---
+
+# 🟡 400 — Bad Request
+
+## ⚠️ Significado
+
+El cliente envió datos inválidos o incompletos.
+
+## 📌 Cuándo se utiliza
+
+* Campos vacíos
+* Validaciones incorrectas
+* Datos inválidos
+* Formato incorrecto
+
+## 🧪 Ejemplo
+
+```js
+if (!email) {
+   return res.status(400).json({
+      mensaje: "El email es obligatorio"
+   });
+}
+```
+
+---
+
+# 🟡 401 — Unauthorized
+
+## 🔐 Significado
+
+El usuario no está autenticado.
+
+## 📌 Cuándo se utiliza
+
+* Token inexistente
+* JWT inválido
+* Usuario sin login
+
+## 🧪 Ejemplo
+
+```js
+if (!token) {
+   return res.status(401).json({
+      mensaje: "Token requerido"
+   });
+}
+```
+
+---
+
+# 🟡 403 — Forbidden
+
+## 🚫 Significado
+
+El usuario está autenticado pero no tiene permisos.
+
+## 📌 Cuándo se utiliza
+
+* Usuario sin permisos admin
+* Rutas protegidas
+* Acceso restringido
+
+## 🧪 Ejemplo
+
+```js
+if (usuario.rol !== "admin") {
+   return res.status(403).json({
+      mensaje: "Acceso denegado"
+   });
+}
+```
+
+---
+
+# 🔴 404 — Not Found
+
+## ❌ Significado
+
+El recurso solicitado no existe.
+
+## 📌 Cuándo se utiliza
+
+* Usuario no encontrado
+* Producto inexistente
+* Ruta inexistente
+* ID inválido
+
+## 🧪 Ejemplo
+
+```js
+if (usuario.rows.length === 0) {
+   return res.status(404).json({
+      mensaje: "Usuario no encontrado"
+   });
+}
+```
+
+---
+
+# 🔴 409 — Conflict
+
+## ⚠️ Significado
+
+Existe un conflicto con los datos.
+
+## 📌 Cuándo se utiliza
+
+* Email repetido
+* Usuario duplicado
+* Datos únicos ya registrados
+
+## 🧪 Ejemplo
+
+```js
+if (emailExiste) {
+   return res.status(409).json({
+      mensaje: "El email ya existe"
+   });
+}
+```
+
+---
+
+# 🔴 500 — Internal Server Error
+
+## 💀 Significado
+
+Ocurrió un error interno en el servidor.
+
+## 📌 Cuándo se utiliza
+
+* Error en PostgreSQL
+* Error inesperado
+* Fallo interno backend
+* Problemas del servidor
+
+## 🧪 Ejemplo
+
+```js
+catch(error) {
+   return res.status(500).json({
+      mensaje: "Error interno del servidor"
+   });
+}
+```
+
+---
+
+# 🧠 Diferencia Entre 400 y 500
+
+## 400
+
+👉 El cliente envió algo incorrecto.
+
+Ejemplo:
+
+* Campos vacíos
+* Edad inválida
+* Email incorrecto
+
+---
+
+## 500
+
+👉 El problema ocurrió en el backend.
+
+Ejemplo:
+
+* PostgreSQL apagado
+* Error de código
+* Fallo interno del servidor
+
+---
+
+# 🚀 Códigos Más Utilizados en Backend
+
+| Código | Significado            |
+| ------ | ---------------------- |
+| 200    | Todo correcto          |
+| 201    | Recurso creado         |
+| 400    | Datos inválidos        |
+| 401    | No autenticado         |
+| 403    | Sin permisos           |
+| 404    | Recurso no encontrado  |
+| 409    | Conflicto de datos     |
+| 500    | Error interno servidor |
+
+---
+
+# 🧠 Ejemplo Profesional Completo
+
+```js
+try {
+
+   const result = await pool.query(
+      "SELECT * FROM usuarios WHERE id = $1",
+      [id]
+   );
+
+   if(result.rows.length === 0) {
+
+      return res.status(404).json({
+         mensaje: "Usuario no encontrado"
+      });
+
+   }
+
+   res.status(200).json(result.rows[0]);
+
+} catch(error) {
+
+   res.status(500).json({
+      mensaje: "Error interno del servidor"
+   });
+
+}
+```
+
+
 # 🔥 Consejos Importantes
 
 ## ✅ No memorices
