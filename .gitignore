@@ -1,6 +1,7 @@
+# modules
 node_modules
+
+# archivos privados
 .env
-
 READMEPrivate.md
-
 practica
