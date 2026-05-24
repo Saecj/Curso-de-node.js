@@ -1,0 +1,81 @@
+.cont-form {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    margin-bottom:  20px;
+    background: linear-gradient(to right, #7c3aed, #2fe);
+    padding: 12px;
+    border-radius: 15px;
+}
+
+input {
+    margin: 3px;
+    padding: 7px;
+    border: none;
+    border-bottom: 2px solid #333;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: 2px solid #2e4;
+    outline-offset: 1px;
+}
+
+button {
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+    margin-top: 7px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 7px;
+    background: linear-gradient(to left, #7aeecd, #2e3);
+    font-weight: bolder;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #7aeecd, #2e3);
+    transform: translateY(-5px);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cont {
+    border: 2px solid #333;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .3s ease;
+    padding: 5px;
+    background: linear-gradient(to right, #2fe, #7c3aed);
+}
+
+.fondo {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cont:hover {
+    transform: translateY(-3px);
+}
+
+
+
+#mensaje {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-weight: bold;
+}
+
