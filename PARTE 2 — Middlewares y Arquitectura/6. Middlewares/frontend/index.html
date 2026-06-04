@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="cont-general">
+        <div id="cont-login">
+            <form action="" id="form-login" autocomplete="off">
+                <div class="end"><span class="mensaje">Doble click para cerrar =></span><button id="btn-end">x</button></div>
+                <h2>Iniciar Sesion</h2>
+                <input type="email" name="" id="login-email" placeholder="Email" class="email-login">
+                <input type="password" name="" id="login-pass" placeholder="Contraseña" class="pass-login">
+                <button type="submit" id="btn-login">Iniciar Sesion</button>
+                <p id="msj-login"></p>
+            </form>
+        </div>
+
+        <div id="cont-form-usuarios">
+            <form action="" id="form-usuarios" autocomplete="off">
+                <h2>Agregar Usuarios</h2>
+                <input type="text" name="" id="inp-nombre" class="nombre" placeholder="Nombre">
+                <input type="email" name="" id="inp-email" class="email" placeholder="Email">
+                <input type="text" name="" id="inp-pass" class="contraseña" placeholder="Contraseña">
+                <select name="" id="inp-rol" class="rol">
+                    <option value="">Escoge una opcion:</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Cliente">Cliente</option>
+                    <option value="Visitante">Visitante</option>
+                </select>
+                <button type="submit" id="btn-agregar">Agregar usuario</button>
+                <p id="mensaje-usuario"></p>
+            </form>
+        </div>
+
+        <div id="contenido"></div>
+    </div>
+    <script src="codigo.js"></script>
+</body>
+
+</html>

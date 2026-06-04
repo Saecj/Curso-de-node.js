@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --fondo: #7af3cbc4
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#cont-login {
+    background: #eee;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;  
+}
+
+/* #cont-login {
+    display: none;
+} */
+
+#form-login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    border: 2px solid #222;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.end {
+    display: flex;
+    justify-content: end;
+    margin: 0;
+    padding: 0;
+}
+
+.mensaje {
+    margin-right: 5px;
+    transform: translateY(5px);
+    color: #fff;
+    transition: all .3s ease;
+}
+
+#btn-end {
+    background: #ff0000;
+    border: none;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.end:has(#btn-end:hover) .mensaje {
+    color: #555;
+}
+
+
+.email-login, .pass-login {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none; border-bottom : 2px solid aquamarine;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    outline: transparent;
+    outline-offset: 2px;
+    transition: all .3s ease;
+}
+
+.email-login:focus, .pass-login:focus {
+    outline: 2px solid aquamarine;
+}
+
+#btn-login {
+    margin: auto;
+    margin-top: 7px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #4e2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#btn-login:hover {
+    background: rgba(43, 255, 0, 0.712)
+}
+
+#msj-login {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+
+/* Contendio admin */
+
+#cont-form-usuarios {
+    background: var(--fondo);
+    padding: 20px;
+    box-shadow: 0 7px 20px rgb(61, 3, 218);
+}
+
+#form-usuarios {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #888;
+    background: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 1px 2px 5px #2e4;
+}
+
+.nombre, .email, .contraseña, .rol {
+    padding: 7px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 700px;
+    border: none; border-bottom: 2px solid aquamarine; border-top: 2px solid aquamarine;
+    border-radius: 7px;
+    outline: none;
+}
+
+#btn-agregar {
+    margin: auto;
+    margin-top: 7px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #4e2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#btn-agregar:hover {
+    background: rgba(43, 255, 0, 0.712);
+    transform: translateY(-2px);
+}
+
+#mensaje-usuario {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.content-usuario {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    background: linear-gradient(to right, #2ee, #fdd );
+    border-radius: 9px;
+    transition: all .3s ease;
+}
+
+.content-usuario:hover {
+    transform: translateY(-5px);
+}
+
+#contenido {
+    display: flex;
+    flex-wrap: wrap;
+    background: #7af3cbc4;
+    margin-top: 10px;
+    padding: 10px;
+    
+}
+
+.content-usuario {
+    box-shadow: 7px 7px 20px  #2e4;
+}
+
+.btnActualizar, .btnEliminar {
+    background: linear-gradient(to left, #2ee, #fdd);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s ease;
+    margin-left: 5px;
+}
+
+.btnActualizar:hover , .btnEliminar:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to left, #fdd, #2ee);
+}
